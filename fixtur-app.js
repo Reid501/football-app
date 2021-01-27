@@ -1,4 +1,4 @@
-const table = document.getElementById('score-container')
+const container = document.getElementById('score-container')
 
 const getData = async () => {
     // Get The Round Number For Current Fixtures
@@ -27,9 +27,27 @@ const getData = async () => {
             const data = await response.json();
             console.log(data);
             data.response.map( item => {
-                const tableRow = document.createElement('TR')
-                table.appendChild(tableRow);
-                tableRow.innerHTML = ``
+                let scoreSec;
+                if (item.fixture.status.elapsed === null){
+                    scoreSec = document.createElement('DIV').innerHTML = 
+                    '<div><p>-</p></div>';
+                } else {
+                    scoreSec = document.createElement('DIV').innerHTML = `
+                        <div>
+                            <p>${item.fixture.status.elapsed}</p>
+                            <p>${item.goals.home}-${item.goals.away}</p>
+                        </div>
+                    `
+                }
+                const section = document.createElement('SECTION')
+                container.appendChild(section);
+                section.innerHTML = `
+                <h3>${item.teams.home.name}</h3>
+                <img src=${item.teams.home.logo}>
+                ${scoreSec}
+                <img src=${item.teams.away.logo}>
+                <h3>${item.teams.away.name}</h3>
+                `
             })
         }
     } catch (error) {
@@ -39,12 +57,4 @@ const getData = async () => {
 
 getData()
 
- // let scoreSec;
-                // if (item.fixture.status.elapsed === null){
-                //     scoreSec = document.createElement('TH').innerHTML = '-';
-                // } else {
-                //     scoreSec = document.createElement('TH').innerHTML = `
-                //         <tr>${item.fixture.status.elapsed}</tr>
-                //         <tr>${item.goals.home}-${item.goals.away}</tr>
-                //     `
-                // }
+ 
