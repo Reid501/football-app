@@ -30,15 +30,15 @@ const getData = async () => {
             // Add The Response To The DOM
             data.response.map( item => {
                 // Create A Section For The Scores To Go
-                let scoreSec;
+                let scoreSec = '';
                 // Check If The Game Has Kicked Off
                 if (item.fixture.status.elapsed === null){
                     scoreSec = document.createElement('DIV').innerHTML = 
-                    '<div><p>-</p></div>';
+                    '<div class="before-kickoff"><p>-</p></div>';
                 } else {
                     // Create Div Containing The Time And Score
                     scoreSec = document.createElement('DIV').innerHTML = `
-                        <div>
+                        <div class="after-kickoff">
                             <p>${item.fixture.status.elapsed}</p>
                             <p>${item.goals.home}-${item.goals.away}</p>
                         </div>

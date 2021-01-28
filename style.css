@@ -74,6 +74,7 @@ footer {
 /* Live Score Style */
 
 .socre-container {
+    margin: 0 auto;
     display: flex;
     width: 60%;
     flex-direction: column;
@@ -85,6 +86,7 @@ footer {
 img {
     width: 24px;
     height: 24px;
+    margin: 0px 15px
 }
 
 th {
@@ -95,7 +97,9 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 0px 10px;
+    margin: 0px;
+    height: 60px;
 }
 
 section div {
@@ -116,10 +120,34 @@ h3 {
 
 .container-header {
     background-color: rgb(56, 0, 60);
-    color: #04f5ff;;
+    color: #04f5ff;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
 }
 
 .away-team-name {
     display: flex;
     flex-direction: row-reverse;
+}
+
+.before-kickoff{
+    background-color: #e90052;
+}
+
+.before-kickoff p {
+    color: #fff;
+    padding: 5px;
+    font-weight: bolder;
+}
+
+.after-kickoff {
+    background-color: 	#00ff85;
+}
+
+.after-kickoff p{
+    color: #fff;
+    padding: 5px;
+    font-weight: bold;
 }
