@@ -1,3 +1,5 @@
+const container = document.getElementById('stadium-container')
+
 const getData = async () => {
 
         // Get The Stadium Data
@@ -12,6 +14,17 @@ const getData = async () => {
         if (response.ok) {
             const data = await response.json();
             console.log(data);
+            data.response.map(item => {
+                const section = document.createElement('SECTION');
+                container.appendChild(section)
+                section.innerHTML = `
+                <img class="badge" src=${item.team.logo}>
+                <h2>${item.team.name}</h2>
+                <h3>${item.venue.name}</h3>
+                <h4>CAPACITY: ${item.venue.capacity}</h4>
+                <img class="stadium-pic" src=${item.venue.image}>
+                `
+            })
         }
     } catch (error) {
         console.log(error)
