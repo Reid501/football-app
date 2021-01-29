@@ -4,12 +4,12 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-/* Page Style */
 
 .wrap {
     min-height: calc(100vh - 92px);
 }
 
+/* Page Style */
 header {
     background-color: #00ff85;
     margin-bottom: 50px;
@@ -71,71 +71,5 @@ nav ul li a:hover {
 
 footer {
     background-color: #e90052;
-    margin-top: 50px;
-}
-
-
-/* League Table Stle */
-
-.tableContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-table {
-    border: rgba(128, 128, 128, 0.5) solid 1px;
-    border-collapse: collapse;
-}
-
-table tr:nth-child(odd) {
-    background-color: rgba(4, 247, 255, 0.068);
-}
-
-table tr th{
-    padding: 20px;
-    color: rgb(58, 57, 57);
-}
-
-table th img {
-    height: 28px;
-    width: 28px;
-}
-
-table tr:nth-child(1) {
-    background-color: rgb(56, 0, 60);
-}
-
-table tr:nth-child(1) th {
-    color: #04f5ff;
-}
-
-/* Media Queries */
-
-@media only screen and (max-width: 800px) {
-    
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    table {
-        font-size: 10px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-
-    table th img {
-        height: 14px;
-        width: 14px;
-    }
-    
-    table {
-        font-size: 12px;
-    }
-
-    table tr th{
-        padding: 5px;
-    }
+    margin-top: auto;
 }

@@ -5,6 +5,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.wrap {
+    min-height: calc(100vh - 92px);
+}
+
 /* Page Style */
 header {
     background-color: #00ff85;
@@ -67,7 +71,7 @@ nav ul li a:hover {
 
 footer {
     background-color: #e90052;
-    margin-top: 50px;
+    margin-top: auto;
 }
 
 
@@ -81,6 +85,7 @@ footer {
     justify-content: center;
     align-items: center;
     border: 1px rgba(128, 128, 128, 0.377) solid;
+    margin-bottom: 50px;
 }
 
 img {
@@ -150,4 +155,41 @@ h3 {
     color: #fff;
     padding: 5px;
     font-weight: bold;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1050px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h3 {
+        width: 150px;
+        font-size: 12px;
+    }
+
+    .socre-container {
+        width: 90%;
+    }
+
+    section div {
+        width: 75px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    h3 {
+        width: 70px;
+        font-size: 10px;
+    }
+
+    .socre-container {
+        width: 90%;
+    }
+
+    section div {
+        width: 40px;
+    }
 }
