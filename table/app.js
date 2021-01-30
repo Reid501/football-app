@@ -34,6 +34,7 @@ const getData = async () => {
     } catch(err) {
         // Log erros to console
         console.log(err)
+        container.innerHTML = `<h1 class="error-message">Sorry, Looks like we have run out of API calls</h1>`
     }
 }
 
