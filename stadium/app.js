@@ -14,6 +14,7 @@ const getData = async () => {
         if (response.ok) {
             const data = await response.json();
             console.log(data);
+            // Map over the data and create Section which holds the informaion.
             data.response.map(item => {
                 const section = document.createElement('SECTION');
                 container.appendChild(section)
@@ -26,6 +27,7 @@ const getData = async () => {
                 `
             })
         }
+        // Catch Errors
     } catch (error) {
         console.log(error)
         container.innerHTML = `<h1 class="error-message">Sorry, Looks like we have run out of API calls</h1>`
