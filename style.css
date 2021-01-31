@@ -201,4 +201,12 @@ h3 {
     section div {
         width: 40px;
     }
+
+    .before-kickoff p{
+        font-size: 10px;
+    }
+
+    .after-kickoff p{
+        font-size: 10px;
+    }
 }
